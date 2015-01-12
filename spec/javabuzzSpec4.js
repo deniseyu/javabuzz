@@ -1,23 +1,23 @@
 describe('Javabuzz', function(){
 
-  var javabuzz
+  var javabuzz;
 
   beforeEach(function(){
-    javabuzz = new Javabuzz;
+    javabuzz = new Javabuzz();
   });
 
   describe('should divide by', function(){
 
     it('three', function(){
-      expect(javabuzz.isDivisibleByThree(3)).toEqual(true);
+      expect(javabuzz.dividesByThree(3)).toEqual(true);
     });
 
     it('five', function(){
-      expect(javabuzz.isDivisibleByFive(5)).toEqual(true);
+      expect(javabuzz.dividesByFive(5)).toEqual(true);
     });
 
     it('fifteen', function(){
-      expect(javabuzz.isDivisibleByFifteen(15)).toEqual(true);
+      expect(javabuzz.dividesByFifteen(15)).toEqual(true);
     });
 
 
@@ -25,36 +25,38 @@ describe('Javabuzz', function(){
 
   describe('should not divide by', function(){
     it('three', function(){
-      expect(javabuzz.isDivisibleByThree(1)).toEqual(false);
+      expect(javabuzz.dividesByThree(1)).toEqual(false);
     });
 
     it('five', function(){
-      expect(javabuzz.isDivisibleByFive(1)).toEqual(false);
+      expect(javabuzz.dividesByFive(1)).toEqual(false);
     });
 
     it('fifteen', function(){
-      expect(javabuzz.isDivisibleByFifteen(1)).toEqual(false);
+      expect(javabuzz.dividesByFifteen(1)).toEqual(false);
     });
   });
 
   describe('should say', function(){
 
-    it('fizz', function(){
+    it('fizz on threes', function(){
       expect(javabuzz.says(3)).toEqual('fizz')
     });
 
-    it('buzz', function(){
+    it('buzz on fives', function(){
       expect(javabuzz.says(5)).toEqual('buzz')
     });
 
-    it('fizzbuzz', function(){
+    it('fizzbuzz on fifteens', function(){
       expect(javabuzz.says(15)).toEqual('fizzbuzz')
     });
 
-    it('otherwise', function(){
+    it('number otherwise', function(){
       expect(javabuzz.says(4)).toEqual(4)
     });
   });
+
+
 });
 
 
